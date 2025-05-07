@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/fourcylinder?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
-    password: q1w2e3r4!
+    password: 1234!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -17,3 +17,5 @@ spring:
     encoding:
       charset: UTF-8
       force: true
+jwt:
+  secret: 3a512ac9f520511f4eb065a87df78dccab2514b20952b212386f6f6179ac4526713a28ea5e760f36848b06ccce3997d6393c32487b865f29cb5d41fd2f6b549600ebd0f0932564187325cd7c742f2c611af25e68ac2c92074ab89a7b1728919ed5992f3c37d564a0582f48611c1b1b9684d81a59f555d14cbcd16efc0b1f27112385a42fef39a49668fbf6edd74f28f1f4c20b89b1ce3c64d178051e56e18c2742ad6b9d79dd52492c95ef7bb6f67563e6ea9649fcbcfa1f688a1756e6151a495a9a81b5768f138198fccd3bad0d69a31458724b4206761055f056a4e7c3571450c137f6e5c334d1af29b389c3ac889ef5ef7c8c16090251e6b2cfe52dd0cd79

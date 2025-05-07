@@ -15,7 +15,6 @@ import java.util.Date;
 @Component
 public class JwtUtil {
     private Key key;
-    private final long expirationMs = 1000 * 60 * 60;
 
     public JwtUtil(@Value("${jwt.secret}") String secret) {
         key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
