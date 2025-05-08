@@ -24,8 +24,6 @@ public class LoginController {
         this.jwtUtil = jwtUtil;
     }
 
-
-
     @Operation(summary = "로그인", description = "로그인 설명")
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody ReqLoginDto dto) {
