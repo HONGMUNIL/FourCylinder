@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.FourCylinder.Mapper.UserMapper">
+    <resultMap id="userResultMap" type="com.example.FourCylinder.Entity.User">
+    <id property="userId" column="user_id" />
+    <result property="username" column="username" />
+    <result property="password" column="password" />
+    <result property="nickname" column="nickname" />
+    <result property="email" column="email" />
+    <result property="createdAt" column="created_at" />
+    </resultMap>
+
+    <select id="selectByUserId" resultMap="userResultMap">
+        select
+            user_id,
+            username,
+            password,
+            nickname,
+            email,
+            created_at
+        from
+            user_tb
+        where
+            user_id = #{userId}
+    </select>
+    
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="userId">
+        insert into user_tb
+        values (
+        default,
+        #{username},
+        #{password},
+        #{nickname},
+        #{email},
+        now()
+        )
+    </insert>
+</mapper>
