@@ -4,7 +4,6 @@ package com.example.FourCylinder.Repository;
 import com.example.FourCylinder.Entity.User;
 import com.example.FourCylinder.Mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -19,4 +18,7 @@ public class UserRepository {
         return user;
     }
 
+    public Optional<User> findByUsername(String username){
+        return Optional.ofNullable(userMapper.selectByUsername(username));
+    }
 }

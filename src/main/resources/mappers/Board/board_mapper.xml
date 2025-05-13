@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.FourCylinder.Mapper.BoardMapper">
+    <resultMap id="boardResultMap" type="com.example.FourCylinder.Entity.Board">
+
+    </resultMap>
+
+<!--    <select id="selectByBoardId" resultMap="boardResultMap">-->
+
+<!--    </select>-->
+
+    <insert id="insertBoard" useGeneratedKeys="true" keyProperty="boardId">
+        insert into board_tb
+        values (
+            default,
+            #{title},
+            #{content},
+            #{author},
+            now(),
+            now()
+        )
+    </insert>
+</mapper>

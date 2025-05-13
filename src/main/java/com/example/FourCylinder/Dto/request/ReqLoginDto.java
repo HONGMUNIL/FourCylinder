@@ -10,4 +10,5 @@ public class ReqLoginDto {
     private String username;
     @Schema(description = "비밀번호", example = "1q2w3e4r")
     private String password;
+
 }

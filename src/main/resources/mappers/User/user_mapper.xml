@@ -12,7 +12,7 @@
     <result property="createdAt" column="created_at" />
     </resultMap>
 
-    <select id="selectByUserId" resultMap="userResultMap">
+    <select id="selectByUsername" resultMap="userResultMap">
         select
             user_id,
             username,
@@ -23,9 +23,9 @@
         from
             user_tb
         where
-            user_id = #{userId}
+            username = #{username}
     </select>
-    
+
     <insert id="insertUser" useGeneratedKeys="true" keyProperty="userId">
         insert into user_tb
         values (
