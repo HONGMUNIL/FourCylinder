@@ -13,6 +13,7 @@ public class BoardService {
     @Autowired
     private BoardRepository boardRepository;
 
+    //생성
     public Board createBoard(ReqBoardDto reqBoardDto) {
         Board board = Board.builder()
                 .title(reqBoardDto.getTitle())
@@ -20,6 +21,11 @@ public class BoardService {
                 .author(reqBoardDto.getAuthor())
                 .build();
         return boardRepository.saveBoard(board);
+    }
+
+    //삭제
+    public boolean deleteBoard(int boardId) {
+        return boardRepository.deleteBoard(boardId) > 0 ? true : false;
     }
 
 }

@@ -22,4 +22,10 @@
             now()
         )
     </insert>
+
+    <delete id="deleteBoard">
+        delete from board_tb
+        where
+            board_id = #{boardId}
+    </delete>
 </mapper>

@@ -18,4 +18,8 @@ public class BoardRepository {
     }
 
 
+    public int deleteBoard(int boardId) {
+       return boardMapper.deleteBoard(boardId);
+
+    }
 }
