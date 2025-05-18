@@ -31,7 +31,12 @@ public class BoardController {
         return boardService.deleteBoard(boardId)
             ? ResponseEntity.ok().body("삭제완료")
                 : ResponseEntity.badRequest().body("삭제실패");
+    }
 
+    @Operation(summary = "게시글 조회", description = "게시글 조회")
+    @GetMapping("/board/{boardId}")
+    public ResponseEntity<?> selectBoard(@PathVariable int boardId) {
+        return ResponseEntity.ok().body(boardService.selectBoard(boardId));
     }
 
 }

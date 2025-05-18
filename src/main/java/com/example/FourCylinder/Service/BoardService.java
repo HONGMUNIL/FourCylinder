@@ -22,6 +22,10 @@ public class BoardService {
                 .build();
         return boardRepository.saveBoard(board);
     }
+    //조회
+    public Board selectBoard(int boardId) {
+        return boardRepository.findByBoardId(boardId);
+    }
 
     //삭제
     public boolean deleteBoard(int boardId) {

@@ -17,6 +17,11 @@ public class BoardRepository {
         return board;
     }
 
+    public Board findByBoardId(int boardId) {
+        return boardMapper.selectBoard(boardId);
+    }
+
+
 
     public int deleteBoard(int boardId) {
        return boardMapper.deleteBoard(boardId);

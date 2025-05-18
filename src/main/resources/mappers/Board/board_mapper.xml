@@ -7,9 +7,14 @@
 
     </resultMap>
 
-<!--    <select id="selectByBoardId" resultMap="boardResultMap">-->
-
-<!--    </select>-->
+    <select id="selectBoard" resultMap="boardResultMap">
+        select
+            *
+        from
+            board_tb
+        where
+            board_id = #{boardId}
+    </select>
 
     <insert id="insertBoard" useGeneratedKeys="true" keyProperty="boardId">
         insert into board_tb
@@ -22,6 +27,8 @@
             now()
         )
     </insert>
+
+
 
     <delete id="deleteBoard">
         delete from board_tb
