@@ -17,11 +17,13 @@ public class BoardRepository {
         return board;
     }
 
+    public int updateBoard(Board board) {
+        return boardMapper.updateBoard(board);
+    }
+
     public Board findByBoardId(int boardId) {
         return boardMapper.selectBoard(boardId);
     }
-
-
 
     public int deleteBoard(int boardId) {
        return boardMapper.deleteBoard(boardId);

@@ -16,6 +16,13 @@
             board_id = #{boardId}
     </select>
 
+    <update id="updateBoard" parameterType="com.example.FourCylinder.Dto.request.ReqUpdateBoardDto">
+        update board_tb
+        set title = #{title},
+            content = #{content}
+        where board_id = #{boardId}
+    </update>
+
     <insert id="insertBoard" useGeneratedKeys="true" keyProperty="boardId">
         insert into board_tb
         values (

@@ -2,8 +2,8 @@ package com.example.FourCylinder.Service;
 
 
 import com.example.FourCylinder.Dto.request.ReqBoardDto;
+import com.example.FourCylinder.Dto.request.ReqUpdateBoardDto;
 import com.example.FourCylinder.Entity.Board;
-import com.example.FourCylinder.Entity.User;
 import com.example.FourCylinder.Repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,20 @@ public class BoardService {
                 .author(reqBoardDto.getAuthor())
                 .build();
         return boardRepository.saveBoard(board);
+    }
+
+    public boolean updateBoard(ReqUpdateBoardDto reqUpdateBoardDto) {
+
+        System.out.println("받은 boardId: " + reqUpdateBoardDto.getBoardId());
+        Board board = Board.builder()
+                .title(reqUpdateBoardDto.getTitle())
+                .content(reqUpdateBoardDto.getContent())
+                .build();
+
+
+        int result = boardRepository.updateBoard(board);
+        System.out.println("DB에서 수정된 행 수: " + result);
+        return result > 0;
     }
     //조회
     public Board selectBoard(int boardId) {

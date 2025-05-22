@@ -2,6 +2,7 @@ package com.example.FourCylinder.Controller;
 
 
 import com.example.FourCylinder.Dto.request.ReqBoardDto;
+import com.example.FourCylinder.Dto.request.ReqUpdateBoardDto;
 import com.example.FourCylinder.Entity.Board;
 import com.example.FourCylinder.Entity.User;
 import com.example.FourCylinder.Service.BoardService;
@@ -23,6 +24,16 @@ public class BoardController {
     public ResponseEntity<?> createBoard(@RequestBody ReqBoardDto reqBoardDto) {
         return ResponseEntity.ok().body(boardService.createBoard(reqBoardDto));
 
+    }
+
+    @Operation(summary = "게시글 수정", description = "게시글 수정")
+    @PutMapping("/update")
+    public ResponseEntity<?> updateBoard(@RequestBody ReqUpdateBoardDto reqUpdateBoardDto) {
+        System.out.println(reqUpdateBoardDto);
+
+        boolean result = boardService.updateBoard(reqUpdateBoardDto);
+                return result ? ResponseEntity.ok().body("수정완료")
+                : ResponseEntity.badRequest().body("수정실패");
     }
 
     @Operation(summary = "게시글 삭제", description = "게시글 삭제")
